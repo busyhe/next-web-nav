@@ -5,8 +5,8 @@ export const siteConfig = {
   description: "基于 Next.js 的前端导航网站",
   mainNav: [],
   links: {
-    twitter: "https://twitter.com/liwenka1",
-    github: "https://github.com/liwenka1/next-web-nav"
+    // twitter: "https://twitter.com/liwenka1",
+    github: "https://github.com/busyhe/next-web-nav"
   }
 }
 
@@ -89,6 +89,30 @@ export const NavData: NavData[] = [
         title: "Apifox",
         desc: "API 文档、API 调试、API Mock、API 自动化测试",
         link: "https://www.apifox.cn/"
+      }
+    ]
+  },
+
+	{
+    title: "AI",
+    items: [
+      {
+        icon: "/icons/chatgpt.svg",
+        title: "chatgpt",
+        desc: "",
+        link: "https://chatgpt.com"
+      },
+			{
+        icon: "/icons/claude.png",
+        title: "claude",
+        desc: "",
+        link: "https://claude.ai"
+      },
+			{
+        icon: "https://chat.deepseek.com/favicon.svg",
+        title: "deepseek",
+        desc: "",
+        link: "https://chat.c.com"
       }
     ]
   },
@@ -286,19 +310,19 @@ export const NavData: NavData[] = [
     title: "CSS",
     items: [
       {
-        icon: "https://postcss.org/assets/logo-3e39b0aa.svg",
+        icon: "/icons/postcss-logo-symbol.svg",
         title: "PostCSS",
         desc: "一个用 JavaScript 转换 CSS 的工具",
         link: "https://postcss.org"
       },
       {
-        icon: "https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg",
+        icon: "/icons/sass.svg",
         title: "Sass",
         desc: "一个成熟，稳定，功能强大的专业级 CSS 扩展语言",
         link: "https://sass-lang.com"
       },
       {
-        icon: "https://www.tailwindcss.cn/apple-touch-icon.png",
+        icon: "/icons/tailwindcss.png",
         title: "TailwindCSS 中文网",
         desc: "一个功能类优先的 CSS 框架",
         link: "https://www.tailwindcss.cn"
@@ -318,7 +342,7 @@ export const NavData: NavData[] = [
       {
         title: "UnoCSS",
         desc: "即时按需原子 CSS 引擎",
-        icon: "https://uno.antfu.me//favicon.svg",
+        icon: "/icons/unocss.svg",
         link: "https://uno.antfu.me/"
       },
       {
@@ -701,13 +725,13 @@ export const NavData: NavData[] = [
       {
         title: "VitePress",
         desc: "Vue 驱动并使用Vite构建的静态网站生成器",
-        icon: "https://vuepress.vuejs.org/hero.png",
+        icon: "https://vitepress.dev/vitepress-logo-mini.svg",
         link: "https://vitepress.vuejs.org"
       },
       {
         title: "VuePress",
         desc: "Vue 驱动的静态网站生成器",
-        icon: "https://vuepress.vuejs.org/hero.png",
+        icon: "https://vuepress.vuejs.org/images/hero.png",
         link: "https://vuepress.vuejs.org"
       },
       {
