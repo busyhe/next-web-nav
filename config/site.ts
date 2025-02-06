@@ -616,9 +616,50 @@ export const NavData: NavData[] = [
         desc: "一站式完成原型、设计、交互与交付，为数字化团队协作提效",
         icon: "https://cms.pixso.cn/images/logo.svg",
         link: "https://pixso.cn/"
-      }
+      },
+			{
+				title: "Dribbble",
+				desc: "Dribbble 是一个社交设计网站，用于展示、促销、发现和探讨设计",
+				icon: "/icons/dribbble.png",
+				link: "https://dribbble.com/"
+			},
+      {
+				title: "Codrops",
+				desc: "网页设计和开发技术的灵感来源",
+				icon: "/icons/codrops.png",
+				link: "https://tympanus.net/codrops/"
+			}
     ]
   },
+	{
+		title: "动画",
+		items: [
+			{
+				title: "Gsap",
+				desc: "一个为专业人士构建的非常强大的JavaScript动画库",
+				icon: "https://gsap.com/favicon-32x32.png",
+				link: "https://gsap.com/"
+			},
+			{
+				title: "Motion",
+				desc: "现代JavaScript动画库",
+				icon: "/icons/motion.png",
+				link: "https://motion.dev/"
+			},
+			{
+				title: "Threejs",
+				desc: "一个 JavaScript 库，用于使用 WebGL 在 Web 浏览器中创建和显示动画 3D 图形",
+				icon: "https://threejs.org/files/favicon.ico",
+				link: "https://threejs.org/"
+			},
+			{
+				title: "Animejs",
+				desc: "一个轻量级的 JavaScript 动画库，具有简单而强大的 API",
+				icon: "https://animejs.com/documentation/assets/img/favicon.png",
+				link: "https://animejs.com/"
+			}
+		]
+	},
   {
     title: "字体图标",
     items: [
