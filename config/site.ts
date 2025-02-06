@@ -347,7 +347,7 @@ export const NavData: NavData[] = [
       },
       {
         title: "Bootstrap",
-        desc: "Bootstrap 是全球最受欢迎的前端开源工具库，它支持 Sass 变量和 mixin、响应式栅格系统、自带大量组件和众多强大的 JavaScript 插件。基于 Bootstrap 提供的强大功能，能够让你快速设计并定制你的网站",
+        desc: "Bootstrap 是全球最受欢迎的前端开源工具库，基于 Bootstrap 提供的强大功能，能够让你快速设计并定制你的网站",
         icon: "https://img.kuizuo.cn/20210907055816.png",
         link: "https://v5.bootcss.com/"
       },
@@ -399,12 +399,12 @@ export const NavData: NavData[] = [
         icon: "/icons/uiverse.png",
         link: "https://uiverse.io"
       },
-      {
-        title: "HYPE4",
-        desc: "透明玻璃态生成器",
-        icon: "https://hype4.academy/_next/static/media/logorwd@2x.b40bc92c.png",
-        link: "https://hype4.academy/tools/glassmorphism-generator"
-      },
+      // {
+      //   title: "HYPE4",
+      //   desc: "透明玻璃态生成器",
+      //   icon: "https://hype4.academy/_next/static/media/logorwd@2x.b40bc92c.png",
+      //   link: "https://hype4.academy/tools/glassmorphism-generator"
+      // },
       {
         title: "Omatsuri",
         desc: "收集不同的发电机，让您的生活更轻松。",
@@ -435,7 +435,7 @@ export const NavData: NavData[] = [
     title: "Node",
     items: [
       {
-        icon: "https://deno.com/logo.svg",
+        icon: "/icons/deno.svg",
         title: "deno",
         desc: "Deno is the open-source JavaScript runtime for the modern web.",
         link: "https://deno.com/"
@@ -472,7 +472,7 @@ export const NavData: NavData[] = [
       },
       {
         title: "TypeORM",
-        desc: "TypeORM 是一个 ORM 框架，它可以运行在 NodeJS、Browser、Cordova、PhoneGap、Ionic、React Native、Expo 和 Electron 平台上，可以与 TypeScript 和 JavaScript (ES5,ES6,ES7,ES8)一起使用",
+        desc: "TypeORM 是一个 ORM 框架，它可以运行在 NodeJS、Browser、Cordova、PhoneGap、Ionic、React Native、Expo 和 Electron 平台上",
         icon: "/icons/typeorm.ico",
         link: "https://typeorm.bootcss.com"
       },
@@ -553,16 +553,22 @@ export const NavData: NavData[] = [
     title: "前端文档",
     items: [
       {
-        icon: "https://developer.mozilla.org/apple-touch-icon.6803c6f0.png",
+        icon: "https://developer.mozilla.org/favicon-48x48.png",
         title: "MDN | Web 开发者指南",
         desc: "Mozilla 的开发者平台，提供了大量关于 HTML、CSS 和 JavaScript 的详细文档以及广泛的 Web API 参考资料",
         link: "https://developer.mozilla.org/zh-CN"
       },
       {
-        icon: "https://static.runoob.com/images/favicon.ico",
+        icon: "https://static.jyshare.com/images/favicon.ico",
         title: "菜鸟教程",
         desc: "学的不仅是技术，更是梦想！",
         link: "https://www.runoob.com"
+      },
+			{
+        icon: "https://zh.javascript.info/img/favicon/favicon.png",
+        title: "现代 JavaScript 教程",
+        desc: "以最新的 JavaScript 标准为基准。通过简单但足够详细的内容，为你讲解从基础到高阶的 JavaScript 相关知识。",
+        link: "https://zh.javascript.info/"
       },
       {
         icon: "/icons/es6.png",
@@ -610,12 +616,6 @@ export const NavData: NavData[] = [
         desc: "一站式完成原型、设计、交互与交付，为数字化团队协作提效",
         icon: "https://cms.pixso.cn/images/logo.svg",
         link: "https://pixso.cn/"
-      },
-      {
-        title: "AIDesign",
-        desc: "10秒创建您的LOGO！",
-        icon: "https://ailogo.qq.com//favicon.ico?v=1.1",
-        link: "https://ailogo.qq.com/"
       }
     ]
   },
@@ -636,7 +636,7 @@ export const NavData: NavData[] = [
       },
       {
         title: "iconfont",
-        desc: "iconfont-国内功能很强大且图标内容很丰富的矢量图标库，提供矢量图标下载、在线存储、格式转换等功能",
+        desc: "iconfont-国内功能很强大且图标内容很丰富的矢量图标库",
         icon: "https://img.alicdn.com/imgextra/i4/O1CN01EYTRnJ297D6vehehJ_!!6000000008020-55-tps-64-64.svg",
         link: "https://www.iconfont.cn/"
       },
@@ -667,7 +667,7 @@ export const NavData: NavData[] = [
       {
         title: "渐变色网站",
         desc: "数百万个自动生成的渐变的网站",
-        icon: "https://gradihunt.com/favicon.ico",
+        icon: "https://gradihunt.com/icon-192.png",
         link: "https://gradihunt.com/"
       },
       {
@@ -681,6 +681,12 @@ export const NavData: NavData[] = [
         desc: "一个动态生成的可自定义 SVG 打字效果",
         icon: "/icons/typing-svg.png",
         link: "https://readme-typing-svg.herokuapp.com/demo/"
+      },
+			{
+        title: "lucide",
+        desc: "Beautiful &consistent icons",
+        icon: "https://lucide.dev/logo.light.svg",
+        link: "https://lucide.dev/"
       }
     ]
   },
@@ -696,24 +702,18 @@ export const NavData: NavData[] = [
       {
         title: "Tauri",
         desc: "Tauri是一个框架，用于为所有主要桌面平台构建小巧、快速的二进制文件",
-        icon: "https://tauri.app/meta/favicon-96x96.png",
+        icon: "https://raw.githubusercontent.com/tauri-apps/tauri/dev/.github/icon.png",
         link: "https://tauri.app/"
       },
       {
         title: "Flutter",
         desc: "Flutter 是 Google 开源的应用开发框架，仅通过一套代码库，就能构建精美的、原生平台编译的多平台应用",
-        icon: "https://flutter.cn/assets/images/cn/flutter-icon.png",
+        icon: "https://docs.flutter.cn/assets/images/cn/flutter-icon.png",
         link: "https://flutter.cn/"
       },
       {
-        title: "Uni-app",
-        desc: "uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/QQ/快手/钉钉/淘宝）、快应用等多个平台",
-        icon: "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/d23e842c-58fc-4574-998d-17fdc7811cc3.png",
-        link: "https://uniapp.dcloud.io/"
-      },
-      {
         title: "Taro",
-        desc: "Taro 是一个开放式跨端跨框架解决方案，支持使用 React/Vue/Nerv 等框架来开发 微信 / 京东 / 百度 / 支付宝 / 字节跳动 / QQ / 飞书 小程序 / H5 / RN 等应用",
+        desc: "Taro 是一个开放式跨端跨框架解决方案",
         icon: "/icons/taro.png",
         link: "https://taro.jd.com"
       }
@@ -735,12 +735,6 @@ export const NavData: NavData[] = [
         link: "https://vuepress.vuejs.org"
       },
       {
-        title: "Docusaurus",
-        desc: "快速构建以内容为核心的最佳网站",
-        icon: "/icons/docusaurus.svg",
-        link: "https://docusaurus.io"
-      },
-      {
         title: "Hexo",
         desc: "快速、简洁且高效的博客框架",
         icon: "https://hexo.io/favicon.ico",
@@ -751,12 +745,6 @@ export const NavData: NavData[] = [
         desc: "GitBook帮助您为用户发布漂亮的文档，并集中您的团队的知识进行高级协作",
         icon: "https://assets-global.website-files.com/600ead1452cf056d0e52dbed/6246d2036225eac4d74cff27_Favicon_Blue.png",
         link: "https://www.gitbook.com/"
-      },
-      {
-        title: "Docsify",
-        desc: "docsify 可以快速帮你生成文档网站",
-        icon: "https://docsify.js.org/_media/icon.svg",
-        link: "https://docsify.js.org"
       },
       {
         title: "WordPress",
@@ -771,15 +759,9 @@ export const NavData: NavData[] = [
     items: [
       {
         title: "Github",
-        icon: "/icons/github.ico",
+        icon: "/icons/github.svg",
         desc: "一个面向开源及私有软件项目的托管平台",
         link: "https://github.com"
-      },
-      {
-        title: "Gitee",
-        desc: "Gitee 是中国领先的基于 Git 的代码托管平台，类似于全球知名的 GitHub",
-        icon: "/icons/gitee.ico",
-        link: "https://gitee.com/"
       },
       {
         title: "Gitlab",
@@ -787,11 +769,11 @@ export const NavData: NavData[] = [
         icon: "https://gitlab.com/uploads/-/system/group/avatar/6543/logo-extra-whitespace.png?width=64",
         link: "https://gitlab.com/"
       },
-      {
-        title: "Gitea",
-        desc: "Gitea 是一个开源社区驱动的轻量级代码托管解决方案，后端采用 Go 编写，采用 MIT 许可证.",
-        icon: "https://gitea.io/images/favicon.png",
-        link: "https://gitea.io/"
+			{
+        title: "Gitee",
+        desc: "Gitee 是中国领先的基于 Git 的代码托管平台，类似于全球知名的 GitHub",
+        icon: "/icons/gitee.ico",
+        link: "https://gitee.com/"
       },
       {
         title: "Coding",
@@ -804,6 +786,12 @@ export const NavData: NavData[] = [
   {
     title: "网站托管",
     items: [
+			{
+        title: "Cloudflare",
+        desc: "Cloudflare 是全球最大的网络基础设施服务提供商之一，致力于为全球互联网提供更快、更安全的服务",
+        icon: "/icons/cloudflare.png",
+        link: "https://dash.cloudflare.com/"
+      },
       {
         title: "Vercel",
         desc: "Vercel将最好的开发人员体验与对最终用户性能的执着关注相结合",
@@ -846,7 +834,7 @@ export const NavData: NavData[] = [
     title: "社区",
     items: [
       {
-        icon: "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+        icon: "/icons/stackoverflow.svg",
         title: "Stack Overflow",
         desc: "全球最大的技术问答网站",
         link: "https://stackoverflow.com"
@@ -859,7 +847,7 @@ export const NavData: NavData[] = [
       },
       {
         title: "V2EX",
-        icon: "https://www.v2ex.com/static/icon-192.png",
+        icon: "/icons/V2EX.svg",
         desc: "一个关于分享和探索的地方",
         link: "https://www.v2ex.com"
       },
