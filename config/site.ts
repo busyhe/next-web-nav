@@ -872,6 +872,17 @@ export const NavData: NavData[] = [
     ]
   },
   {
+    title: "建站工具",
+    items: [
+      {
+        title: "GetWaitList",
+        desc: "GetWaitList 是一个为您的产品创建等待列表的工具",
+        icon: "https://getwaitlist.com/favicon.ico",
+        link: "https://getwaitlist.com/"
+      },
+    ]
+  },
+  {
     title: "社区",
     items: [
       {

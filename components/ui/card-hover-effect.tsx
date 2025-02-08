@@ -1,3 +1,5 @@
+'use client';
+
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
@@ -54,6 +56,7 @@ export const HoverEffect = ({
                 alt=""
                 width={40}
                 height={40}
+                style={{width: '40px', height: '40px'}}
               />
               {item.title}
             </CardTitle>
