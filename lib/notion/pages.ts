@@ -14,10 +14,12 @@ export default function getAllPageIds(
   try {
     if (viewIds && viewIds.length > 0) {
       const view = collectionQuery[collectionId][viewIds[0]]
+      console.debug('[DEBUG__~/Workspace/projects/next-web-nav/lib/notion/pages.ts__view.table_groups.results]', view.table_groups.results)
       const groups = view.table_groups.results
         .filter((group: { value: { value: any } }) => group.value.value)
         .map((group: { value: { value: { value: string } } }) => {
           const title = group.value.value.value
+          console.debug(title, view[`results:text:${title}`].blockIds)
           return {
             title,
             items: view[`results:text:${title}`].blockIds
@@ -74,8 +76,13 @@ export const getSites = async ( ) => {
   const pageId = idToUuid(envPageId)
 
   const recordMap = await api.getPage(pageId, {
-    fetchCollections: true
+    fetchCollections: true,
+    kyOptions: {
+      timeout: 60000
+    }
   })
+
+  // console.debug('[DEBUG__~/Workspace/projects/next-web-nav/lib/notion/pages.ts__recordMap]', JSON.stringify(recordMap))
 
   const collection = Object.values(recordMap.collection)[0]?.value
   const collectionQuery = recordMap.collection_query
