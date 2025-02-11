@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-
-import { NavData } from "@/config/site"
+import { useSites } from "@/contexts/sites"
 import { cn } from "@/lib/utils"
 
 export function Sidebar() {
+  const { sites, loading, error } = useSites()
   const [activeTabId, setActiveTabId] = useState(0)
 
   const scroll = (activeTabId: number) => {
@@ -57,7 +57,7 @@ export function Sidebar() {
             <div className="space-y-4 pb-4">
               <div className="py-2">
                 <div className="space-y-1">
-                  {NavData.map((category, index) => {
+                  {sites.map((category, index) => {
                     return (
                       <div
                         className={`relative block cursor-pointer rounded-lg transition-colors ease-in-out ${activeTabId === index ? "bg-accent" : ""}`}

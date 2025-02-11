@@ -1,5 +1,6 @@
 import { idToUuid, getBlockTitle, getPageTitle, getTextContent } from "notion-utils"
 import api from "./core"
+import { NavData } from "@/config/site"
 
 /**
  * 深拷贝对象
@@ -79,11 +80,10 @@ export function getPageProperties(id, value, schema, authToken, tagOptions) {
   return properties
 }
 
-// export const getGroupTitles = ()
-
-export const getPage = async () => {
+export const getSites = async ( ) => {
   const envPageId = process.env.NOTION_PAGE_ID
-  if(!envPageId) return []
+
+  if(!envPageId) return NavData
   const pageId = idToUuid(envPageId)
 
   const recordMap = await api.getPage(pageId, {

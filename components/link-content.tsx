@@ -1,20 +1,12 @@
+"use client"
+
 import { NavData } from "@/config/site"
 import { HoverEffect } from "@/components/ui/card-hover-effect"
-import { getPage } from "@/lib/notion/pages"
+import { useSites } from "@/contexts/sites"
 
-export async function LinkContent() {
+export function LinkContent() {
 
-  const getSites = async () => {
-    // 判断环境变量是否从notion获取来的数据
-    if (process.env.NOTION_PAGE_ID) {
-      const pages = await getPage()
-      return pages
-    } else {
-      return NavData
-    }
-  }
-
-  const sites = await getSites()
+  const { sites, loading, error } = useSites()
 
   return (
     <div className="w-full pb-4 pt-4">

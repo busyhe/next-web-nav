@@ -3,8 +3,8 @@
 import Link from "next/link"
 import { useCallback, useState } from "react"
 
-import { siteConfig, NavData } from "@/config/site"
-
+import { siteConfig } from "@/config/site"
+import { useSites } from "@/contexts/sites"
 import { Circle, Laptop, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { DialogTitle } from "@radix-ui/react-dialog"
@@ -24,6 +24,7 @@ import { Icons } from "./components/icons"
 import { ThemeToggle } from "./components/theme-toggle"
 
 export function SiteHeader() {
+  const { sites, loading, error } = useSites()
   const [open, setOpen] = useState(false)
   const { setTheme } = useTheme()
   const runCommand = useCallback((command: () => void) => {
@@ -49,12 +50,6 @@ export function SiteHeader() {
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            {/* <Link href={siteConfig.links.twitter} target="_blank" rel="noreferrer">
-              <Button className="rounded-full" variant="ghost" size="icon">
-                <Icons.twitter className="h-5 w-5 fill-current" />
-                <span className="sr-only">Twitter</span>
-              </Button>
-            </Link> */}
             <ThemeToggle />
           </div>
         </nav>
@@ -64,7 +59,7 @@ export function SiteHeader() {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          {NavData.map((category) => (
+          {sites.map((category) => (
             <CommandGroup heading={category.title} key={category.title}>
               {category.items.map((navItem) => (
                 <CommandItem
