@@ -20,7 +20,7 @@ export default function getAllPageIds(
           const title = group.value.value.value
           return {
             title,
-            items: view[`results:text:${title}`].blockIds
+            items: view[`results:text:${title}`]?.blockIds
           }
         })
 
@@ -81,8 +81,6 @@ export const getSites = async ( ) => {
     }
   })
 
-  // console.debug('[DEBUG__~/Workspace/projects/next-web-nav/lib/notion/pages.ts__recordMap]', JSON.stringify(recordMap))
-
   const collection = Object.values(recordMap.collection)[0]?.value
   const collectionQuery = recordMap.collection_query
   const block = recordMap.block
@@ -102,7 +100,6 @@ export const getSites = async ( ) => {
       return properties
     })
     return { ...group, items }
-    return group
   })
 
   return sites

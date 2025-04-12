@@ -51,7 +51,7 @@ export const HoverEffect = ({
           <Card>
             <CardTitle>
               <Image
-                src={item.icon}
+                src={item.icon || '/icons/default.png'}
                 className="overflow-hidden object-fill"
                 alt=""
                 width={40}
