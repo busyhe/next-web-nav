@@ -93,8 +93,10 @@ export const getSites = async ( ) => {
   const title = getPageTitle(recordMap)
 
   const pageIds = getAllPageIds(collectionQuery, collectionId, collectionView, viewIds)
-  const sites = pageIds.map((group: { items: string[] }) => {
-    const items = group.items.map((id: string) => {
+
+  console.debug('[DEBUG__notion/pages.ts-pageIds]', pageIds)
+  const sites = pageIds.filter((group: { items: string[] }) => group.items?.length > 0).map((group: { items: string[] }) => {
+    const items = group.items?.map((id: string) => {
       const value = block[id]?.value
       const properties = getPageProperties(id, value, schema, "", collection?.format?.collection_page_properties)
       return properties
