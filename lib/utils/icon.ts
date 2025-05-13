@@ -50,17 +50,7 @@ export function getFaviconUrl(url: string): string {
   }
   
   try {
-    // 尝试提取域名
-    let domain = url;
-    if (url.startsWith('http')) {
-      domain = new URL(url).hostname;
-    } else if (url.includes('/')) {
-      // 可能是不带协议的URL，如 example.com/path
-      domain = url.split('/')[0];
-    }
-    
-    // 使用Google的favicon服务
-    return `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
+    return `/api/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=48&url=${url}`;
   } catch (e) {
     console.error('Error parsing URL for favicon:', e);
     return '/icons/default.png';

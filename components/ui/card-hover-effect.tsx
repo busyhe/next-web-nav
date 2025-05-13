@@ -23,18 +23,18 @@ export const HoverEffect = ({
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
 
   const handleImageError = (icon: string) => {
-    if(!icon) return
     setFailedImages(prev => new Set(prev).add(icon))
   }
 
   const getImageSrc = (item: any) => {
-    if (!item.icon || failedImages.has(item.icon)) {
-      if (item?.link) {
-        return getFaviconUrl(item.link)
-      }
+    const icon = getFaviconUrl(item.link)
+    if (!icon || failedImages.has(icon)) {
       return '/icons/default.png'
     }
-    return getFaviconUrl(item.icon)
+    if (item?.link) {
+      return icon
+    }
+    return '/icons/default.png'
   }
 
   return (
@@ -74,7 +74,7 @@ export const HoverEffect = ({
                   alt=""
                   width={40}
                   height={40}
-                  onError={() => handleImageError(item.icon)}
+                  onError={() => handleImageError(getFaviconUrl(item.link))}
                   unoptimized={true}
                 />
               </div>
