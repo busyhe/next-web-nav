@@ -1,7 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server';
 
-console.log( '11111111' );
-
 export async function GET(request: NextRequest) {
   // Get the original request URL
   const url = new URL(request.url);
@@ -14,8 +12,6 @@ export async function GET(request: NextRequest) {
   const targetUrl = `https://t2.gstatic.com/faviconV2?${paramsString}`;
   
   try {
-
-    console.debug('[DEBUG__faviconV2/route.ts-targetUrl]', targetUrl)
     // Fetch the favicon from Google's service
     const response = await fetch(targetUrl);
     

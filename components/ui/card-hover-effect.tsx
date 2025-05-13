@@ -28,13 +28,14 @@ export const HoverEffect = ({
 
   const getImageSrc = (item: any) => {
     const icon = getFaviconUrl(item.link)
-    if (!icon || failedImages.has(icon)) {
+    if (!item.icon || failedImages.has(item.icon)) {
+      if (item.link) {
+        return icon
+      }
       return '/icons/default.png'
     }
-    if (item?.link) {
-      return icon
-    }
-    return '/icons/default.png'
+
+    return icon
   }
 
   return (
@@ -74,7 +75,7 @@ export const HoverEffect = ({
                   alt=""
                   width={40}
                   height={40}
-                  onError={() => handleImageError(getFaviconUrl(item.link))}
+                  onError={() => handleImageError(item.icon)}
                   unoptimized={true}
                 />
               </div>

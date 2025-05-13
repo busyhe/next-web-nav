@@ -47,7 +47,7 @@ export function getPageProperties(
   authToken: string,
   tagOptions: any
 ) {
-   const rawProperties = Object.entries(value?.properties || [])
+  const rawProperties = Object.entries(value?.properties || [])
   const properties = {
     icon: value?.format?.page_icon,
     title: "",
@@ -66,10 +66,10 @@ export function getPageProperties(
   return properties
 }
 
-export const getSites = async ( ) => {
+export const getSites = async () => {
   const envPageId = process.env.NOTION_PAGE_ID
 
-  if(!envPageId) return []
+  if (!envPageId) return []
   const pageId = idToUuid(envPageId)
 
   const recordMap = await api.getPage(pageId, {
@@ -93,14 +93,16 @@ export const getSites = async ( ) => {
 
   const pageIds = getAllPageIds(collectionQuery, collectionId, collectionView, viewIds)
 
-  const sites = pageIds.filter((group: { items: string[] }) => group.items?.length > 0).map((group: { items: string[] }) => {
-    const items = group.items?.map((id: string) => {
-      const value = block[id]?.value
-      const properties = getPageProperties(id, value, schema, "", collection?.format?.collection_page_properties)
-      return properties
+  const sites = pageIds
+    .filter((group: { items: string[] }) => group.items?.length > 0)
+    .map((group: { items: string[] }) => {
+      const items = group.items?.map((id: string) => {
+        const value = block[id]?.value
+        const properties = getPageProperties(id, value, schema, "", collection?.format?.collection_page_properties)
+        return properties
+      })
+      return { ...group, items }
     })
-    return { ...group, items }
-  })
 
   return sites
 }
