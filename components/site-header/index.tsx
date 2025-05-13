@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useCallback, useState } from "react"
 
 import { NavLink, siteConfig, NavData } from "@/config/site"
-import { Circle, Laptop, Moon, Sun } from "lucide-react"
+import { Circle, Laptop, Moon, Sun, RefreshCw } from "lucide-react"
 import { useTheme } from "next-themes"
 import { DialogTitle } from "@radix-ui/react-dialog"
 import { Button } from "@/components/ui/button"
@@ -41,6 +41,12 @@ export function SiteHeader({ sites }: { sites:  NavData[] }) {
             >
               搜索网站...
             </Button>
+            <Link href="/sync">
+              <Button className="rounded-full" variant="ghost" size="icon">
+                <RefreshCw className="h-5 w-5" />
+                <span className="sr-only">Sync Favicons</span>
+              </Button>
+            </Link>
             <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
               <Button className="rounded-full" variant="ghost" size="icon">
                 <Icons.gitHub className="h-5 w-5" />

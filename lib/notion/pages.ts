@@ -47,9 +47,10 @@ export function getPageProperties(
   authToken: string,
   tagOptions: any
 ) {
+  console.debug('[DEBUG__notion/pages.ts-value]', value)
   const rawProperties = Object.entries(value?.properties || [])
   const properties = {
-    icon: "",
+    icon: value?.format?.page_icon,
     title: "",
     desc: "",
     link: ""
@@ -93,7 +94,6 @@ export const getSites = async ( ) => {
 
   const pageIds = getAllPageIds(collectionQuery, collectionId, collectionView, viewIds)
 
-  console.debug('[DEBUG__notion/pages.ts-pageIds]', pageIds)
   const sites = pageIds.filter((group: { items: string[] }) => group.items?.length > 0).map((group: { items: string[] }) => {
     const items = group.items?.map((id: string) => {
       const value = block[id]?.value
