@@ -21,9 +21,7 @@ export interface NavLink {
   link: string
 }
 
-type NavData = {
+export type NavData = {
   title: string
   items: NavLink[]
 }
-
-export const NavData: NavData[] = []

@@ -19,6 +19,18 @@ export const HoverEffect = ({
   className?: string
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
+
+  const handleImageError = (icon: string) => {
+    setFailedImages(prev => new Set(prev).add(icon))
+  }
+
+  const getImageSrc = (icon: string) => {
+    if (!icon || failedImages.has(icon)) {
+      return '/icons/default.png'
+    }
+    return icon
+  }
 
   return (
     <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3", className)}>
@@ -51,12 +63,14 @@ export const HoverEffect = ({
           <Card>
             <CardTitle>
               <Image
-                src={item.icon || '/icons/default.png'}
+                src={getImageSrc(item.icon)}
                 className="overflow-hidden object-fill"
                 alt=""
                 width={40}
                 height={40}
                 style={{width: '40px', height: '40px'}}
+                onError={() => handleImageError(item.icon)}
+                unoptimized={true}
               />
               {item.title}
             </CardTitle>

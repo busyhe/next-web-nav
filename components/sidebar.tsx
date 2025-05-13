@@ -2,11 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
-import { useSites } from "@/contexts/sites"
 import { cn } from "@/lib/utils"
+import { NavData } from "@/config/site"
 
-export function Sidebar() {
-  const { sites, loading, error } = useSites()
+export function Sidebar({ sites }: { sites: NavData[] }) {
   const [activeTabId, setActiveTabId] = useState(0)
 
   const scroll = (activeTabId: number) => {

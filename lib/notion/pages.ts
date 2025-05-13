@@ -1,6 +1,5 @@
 import { idToUuid, getBlockTitle, getPageTitle, getTextContent } from "notion-utils"
 import api from "./core"
-import { NavData } from "@/config/site"
 
 export default function getAllPageIds(
   collectionQuery: Record<string, any>,
@@ -70,7 +69,7 @@ export function getPageProperties(
 export const getSites = async ( ) => {
   const envPageId = process.env.NOTION_PAGE_ID
 
-  if(!envPageId) return NavData
+  if(!envPageId) return []
   const pageId = idToUuid(envPageId)
 
   const recordMap = await api.getPage(pageId, {
