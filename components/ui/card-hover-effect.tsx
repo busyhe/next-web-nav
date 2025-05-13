@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from "@/lib/utils"
+import { getFaviconUrl } from "@/lib/utils/icon"
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
@@ -22,14 +23,18 @@ export const HoverEffect = ({
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
 
   const handleImageError = (icon: string) => {
+    if(!icon) return
     setFailedImages(prev => new Set(prev).add(icon))
   }
 
-  const getImageSrc = (icon: string) => {
-    if (!icon || failedImages.has(icon)) {
+  const getImageSrc = (item: any) => {
+    if (!item.icon || failedImages.has(item.icon)) {
+      if (item?.link) {
+        return getFaviconUrl(item.link)
+      }
       return '/icons/default.png'
     }
-    return icon
+    return getFaviconUrl(item.icon)
   }
 
   return (
@@ -62,16 +67,17 @@ export const HoverEffect = ({
           </AnimatePresence>
           <Card>
             <CardTitle>
-              <Image
-                src={getImageSrc(item.icon)}
-                className="overflow-hidden object-fill"
-                alt=""
-                width={40}
-                height={40}
-                style={{width: '40px', height: '40px'}}
-                onError={() => handleImageError(item.icon)}
-                unoptimized={true}
-              />
+              <div className="relative w-10 h-10 overflow-hidden rounded-md flex items-center justify-center bg-muted/40">
+                <Image
+                  src={getImageSrc(item)}
+                  className="object-contain"
+                  alt=""
+                  width={40}
+                  height={40}
+                  onError={() => handleImageError(item.icon)}
+                  unoptimized={true}
+                />
+              </div>
               {item.title}
             </CardTitle>
             <CardDescription>{item.description}</CardDescription>

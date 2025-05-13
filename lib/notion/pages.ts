@@ -47,8 +47,7 @@ export function getPageProperties(
   authToken: string,
   tagOptions: any
 ) {
-  console.debug('[DEBUG__notion/pages.ts-value]', value)
-  const rawProperties = Object.entries(value?.properties || [])
+   const rawProperties = Object.entries(value?.properties || [])
   const properties = {
     icon: value?.format?.page_icon,
     title: "",

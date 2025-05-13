@@ -1,6 +1,3 @@
-import { NotionAPI } from 'notion-client';
-import api from './core';
-
 export async function updatePageIcon(pageId: string, iconUrl: string): Promise<boolean> {
   try {
     const { NOTION_ACCESS_TOKEN } = process.env;

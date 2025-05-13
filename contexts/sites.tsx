@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react"
 import { NavData } from "@/config/site"
 
 interface SitesContextValue {
-  sites: typeof NavData
+  sites: NavData[]
   loading: boolean
   error: string | null
   refresh: () => Promise<void>
@@ -33,13 +33,13 @@ export const SitesProvider = ({ children }: { children: React.ReactNode }) => {
       if (!success) throw new Error(error || 'Failed to fetch data')
       
       setState({
-        sites: data || NavData,
+        sites: data || [],
         loading: false,
         error: null
       })
     } catch (err) {
       setState({
-        sites: NavData,
+        sites: [],
         loading: false,
         error: (err as Error).message || 'Failed to load data'
       })
