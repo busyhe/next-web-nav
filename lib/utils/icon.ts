@@ -59,7 +59,8 @@ export function getFaviconUrl(url: string): string {
       domain = url.split("/")[0]
     }
 
-    return `https://favicon.im/${domain}?larger=true`
+    return `https://www.faviconextractor.com/favicon/${domain}?larger=true` // https://github.com/seadfeng/favicon-downloader
+    // return `https://favicon.im/${domain}?larger=true`
   } catch (e) {
     console.error("Error parsing URL for favicon:", e)
     return "/icons/default.png"
