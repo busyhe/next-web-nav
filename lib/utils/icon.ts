@@ -40,7 +40,6 @@ export function optimizeIconUrl(iconUrl: string | null | undefined): string {
  * @returns 处理后的图标URL
  */
 export function getFaviconUrl(url: string): string {
-  console.debug('[DEBUG__utils/icon.ts-url]', url)
   // 如果没有URL，返回默认图标
   if (!url) return "/icons/default.png"
 
@@ -51,7 +50,16 @@ export function getFaviconUrl(url: string): string {
   }
 
   try {
-    return `https://www.google.com/s2/favicons?domain=${url}&sz=64`
+    // 尝试提取域名
+    let domain = url
+    if (url.startsWith("http")) {
+      domain = new URL(url).hostname
+    } else if (url.includes("/")) {
+      // 可能是不带协议的URL，如 example.com/path
+      domain = url.split("/")[0]
+    }
+
+    return `https://favicon.im/${domain}?larger=true`
   } catch (e) {
     console.error("Error parsing URL for favicon:", e)
     return "/icons/default.png"
