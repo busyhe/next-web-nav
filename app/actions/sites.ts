@@ -1,10 +1,12 @@
 "use server";
 
 import { getSites } from '@/lib/notion/pages';
-
-export const dynamic = 'force-dynamic';
+import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchSites() {
+  // Opt out of static rendering and caching
+  noStore();
+  
   try {
     const data = await getSites();
     return { success: true, data };

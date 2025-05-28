@@ -1,5 +1,6 @@
 import { idToUuid, getBlockTitle, getPageTitle, getTextContent } from "notion-utils"
 import api from "./core"
+import { unstable_noStore as noStore } from 'next/cache';  // 添加这一行
 
 export default function getAllPageIds(
   collectionQuery: Record<string, any>,
@@ -7,6 +8,8 @@ export default function getAllPageIds(
   collectionView: Record<string, any>,
   viewIds: string[]
 ) {
+  noStore();
+  
   if (!collectionQuery && !collectionView) {
     return []
   }
