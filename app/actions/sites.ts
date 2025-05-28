@@ -1,7 +1,8 @@
 "use server";
 
 import { getSites } from '@/lib/notion/pages';
-import { NavData } from '@/config/site';
+
+export const dynamic = 'force-dynamic';
 
 export async function fetchSites() {
   try {

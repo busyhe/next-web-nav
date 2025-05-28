@@ -41,12 +41,6 @@ export function SiteHeader({ sites }: { sites:  NavData[] }) {
             >
               搜索网站...
             </Button>
-            <Link href="/sync">
-              <Button className="rounded-full" variant="ghost" size="icon">
-                <RefreshCw className="h-5 w-5" />
-                <span className="sr-only">Sync Favicons</span>
-              </Button>
-            </Link>
             <Link href={siteConfig.links.github} target="_blank" rel="noreferrer">
               <Button className="rounded-full" variant="ghost" size="icon">
                 <Icons.gitHub className="h-5 w-5" />
